@@ -87,7 +87,6 @@ button {
 
 
 
-/* 
 .navbar {
     display: flex;
     justify-content: flex-start;
@@ -105,5 +104,5 @@ button {
   
   .navbar-link:last-child {
     margin-right: 0;
-  } */
+  }
   
