@@ -3,21 +3,31 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 
 
 
-function NavbarHeader() {
+function NavbarHeader({ setCurrentRoute }) {
   return (
-  <div>
+  <div className='navbarbackgrnd'>
     <Navbar expand="lg" bg="dark" variant="dark" collapseOnSelect>
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Luck, Lexicons and Lotto</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+
+        <Nav.Link href="/">Home</Nav.Link> {/* Link to the WelcomePage */}
+        <Nav.Link href="/login">Login</Nav.Link> {/* Link to the Login page */}
+
+
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="WelcomePage.jsx">Link</Nav.Link>
+            <button className="navbar-button" onClick={() => setCurrentRoute('Login')}>
+            Home
+            </button>
+            <button className="navbar-button" onClick={() => setCurrentRoute('link')}>
+                Link
+              </button>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

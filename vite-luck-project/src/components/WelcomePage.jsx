@@ -1,15 +1,17 @@
 import React from 'react';
 import NavbarHeader from './NavbarHeader'; // Make sure to adjust the path to NavbarHeader if needed
+import TimeLapse from '../assets/TimeLapse.mp4';
+
 
 function WelcomePage () {
   return (
     <div className="welcome-background-video">
-      <NavbarHeader />
-    <video autoPlay muted loop className="wecole-video">
-      <source src="https://vod-progressive.akamaized.net/exp=1692607350~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4993%2F17%2F449965919%2F1977816683.mp4~hmac=02aaf78207ce2d79573a592083e0ebee8cd8be28fcc303ace053a7e8edf7bba3/vimeo-prod-skyfire-std-us/01/4993/17/449965919/1977816683.mp4" type="video/mp4" />
+      {/* <NavbarHeader /> */}
+    <video autoPlay muted loop className="welcome-video">
+      <source src= {TimeLapse} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-        
+    <div className="welcome-text-container">  
       <h1>Welcome to our App!</h1>
       <p>
           Are you ready to uncover the secrets the universe has in store for you? Look no further!
@@ -30,6 +32,7 @@ function WelcomePage () {
           [Your Site Name] has something special for everyone. So, sign up or log in now to immerse yourself in the world of horoscopes,
           luck, and inspiration. Let the universe guide you to a brighter and luckier tomorrow!
         </p>
+    </div>
     </div>
   );
 };

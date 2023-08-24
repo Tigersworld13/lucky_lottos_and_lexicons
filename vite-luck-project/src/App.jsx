@@ -1,39 +1,129 @@
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import HomePage from './components/HomePage'
-// import LearnMore from '/components/LearnMore';
-// import Welcome from '/components/welcome_page';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React, { useState } from 'react';
 import NavbarHeader from './components/NavbarHeader';
-import { Login } from './components/Login';
-import { Register } from './components/Register';
+import WelcomePage from './components/WelcomePage';
+import Login from './components/Login';
+import Register from './components/Register';
 
 
 function App() {
   const [currentForm, setCurrentForm] = useState('login');
 
   const toggleForm = (formName) => {
-   setCurrentForm(formName) 
-  }
-
+    setCurrentForm(formName);
+  };
 
 
   return (
-  <div className='App'>
-    <NavbarHeader />
     <>
-    </>
-    {
-      currentForm === "login" ? (
-      <Login onFormSwitch={toggleForm} />
-      ) : (
-      <Register onFormSwitch={toggleForm} />
-    )}
+    <div>
+    <NavbarHeader />
+    <WelcomePage />
+    <Login />
+
+
+    <div className='App'>
       
-      </div>                               
+    </div>
+    
+    </div>
+    
+    </>
+    // ***************************LOGIN/ REGISTER TOGGLE****
+   
+    // *********************************NEED THE ABOve*****
   );
 }
 
 export default App;
+
+
+// <NavbarHeader setCurrentForm={toggleForm} /> {/* Pass setCurrentForm as a prop */}
+//       {currentForm === 'login' ? (
+//         <Login onFormSwitch={toggleForm} />
+//       ) : (
+//         <Register onFormSwitch={toggleForm} />
+//       )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   const renderContent = () => {
+//     switch (currentRoute) {
+//       case 'welcome':
+//         return <WelcomePage />;
+//       case 'login':
+//         return <Login />;
+//       case 'register':
+//         return <Register />;
+//       default:
+//         return <WelcomePage />;
+//     }
+//   };
+
+//   return (
+//     <div className="App">
+//       <NavbarHeader />
+//       {renderContent()}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+// function App() {
+//   const [currentForm, setCurrentForm] = useState('login');
+
+//   const toggleForm = (formName) => {
+//    setCurrentForm(formName) 
+//   }
+
+
+
+//   return (
+//   <div className='App'>
+//     <NavbarHeader />
+//     <>
+//     </>
+//     {
+//       currentForm === "login" ? (
+//       <Login onFormSwitch={toggleForm} />
+//       ) : (
+//       <Register onFormSwitch={toggleForm} />
+//     )}
+      
+//       </div>                               
+//   );
+// }
+
+// export default App;
 
 
 

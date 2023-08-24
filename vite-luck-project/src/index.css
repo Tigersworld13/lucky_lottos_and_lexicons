@@ -54,10 +54,11 @@ button {
 /* styles.css */
 
 .welcome-background-video {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Adjust the height as needed */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
   .welcome-video {
@@ -67,8 +68,36 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-color: black;
+    z-index: 1;  /* This ensures that the video stays behind the content */
   }
   
+  .welcome-background-video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent black. Adjust the last value (0.5) to control transparency */
+    z-index: 2;
+}
+.welcome-text-container {
+  position: relative;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.1);  /* Semi-transparent white. Adjust as needed */
+  padding: 20px;
+  color: rgb(246, 142, 16);
+  border-radius: 10px;
+  width: 70%;  /* or desired width */
+  text-align: center;
+  z-index: 3;
+  margin: 15% 20%;
+}
+
+
+/* 
+
   .welcome-content {
     position: relative;
     z-index: 1;
@@ -80,19 +109,21 @@ button {
     color: #fff;
     padding: 2rem;
   }
-  
+   */
 /* ABOVE IS WELCOME PAGE */
 
 
 
-
+.navbarbackgrnd {
+  background-color: black;
+}
 
 .navbar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     background-color: #333;
-    padding: 10px 20px;
+    padding: 5px 5%;
   }
   
   .navbar-link {
