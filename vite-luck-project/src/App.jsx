@@ -2,29 +2,29 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React, { useState } from 'react';
 import NavbarHeader from './components/NavbarHeader';
 import WelcomePage from './components/WelcomePage';
-import Login from './components/Login';
+import { Login } from './components/Login';
 import Register from './components/Register';
 
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login');
+  // const [currentForm, setCurrentForm] = useState('login');
 
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  };
+  // const toggleForm = (formName) => {
+  //   setCurrentForm(formName);
+  // };
 
 
   return (
     <>
-    <div>
+    <div className='mainpagebkgrd'>
     <NavbarHeader />
     <WelcomePage />
-    <Login />
+    <Register />
 
 
-    <div className='App'>
+    {/* <div className='App'> */}
       
-    </div>
+    {/* </div> */}
     
     </div>
     

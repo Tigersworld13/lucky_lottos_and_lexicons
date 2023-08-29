@@ -7,6 +7,10 @@
     background-image: linear-gradient(79deg, #77FF94, #A1E44D, 48%, #2C4251)
 };
 
+.mainpagebkgrd{
+  color: black;
+}
+
 .auth-form-container, .login-form, .register-form {
     display: flex;
     flex-direction: column;
