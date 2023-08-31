@@ -15,10 +15,10 @@ function WelcomePage () {
       <h1>Welcome to our App!</h1>
       <p>
           Are you ready to uncover the secrets the universe has in store for you? Look no further!
-          [Your Site Name] is here to guide you on a cosmic journey that combines astrology, luck, and inspiration all in one place.
+          Luck, Lexicons and Lotto is here to guide you on a cosmic journey that combines astrology, luck, and inspiration all in one place.
         </p>
         <p>
-          Discover your daily horoscope tailored to your zodiac sign, providing insights into your mood, compatibility, and lucky color.
+          Discover your daily horoscope tailored to your zodiac sign, providing insights into your mood, compatibility, and lucky number.
           But that's not all! Our 'Feelin' Lucky' feature adds an element of surprise to your day, giving you the option to generate a unique lucky number based on your interactions.
           You can choose to answer a set of questions, rely on your zodiac sign's lucky numbers, or even embrace the randomness of the universe.
         </p>
@@ -29,7 +29,7 @@ function WelcomePage () {
         </p>
         <p>
           Whether you're a believer in the stars, seeking a dash of luck, or simply looking to start your day with a smile,
-          [Your Site Name] has something special for everyone. So, sign up or log in now to immerse yourself in the world of horoscopes,
+          Luck, Lexicons and Lotto has something special for everyone. So, sign up or log in now to immerse yourself in the world of horoscopes,
           luck, and inspiration. Let the universe guide you to a brighter and luckier tomorrow!
         </p>
     </div>

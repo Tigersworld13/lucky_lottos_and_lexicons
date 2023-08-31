@@ -7,7 +7,7 @@ import api from "../api/axios";
 // validations
 const USER_REGEX = /^[a-zA-Z][a-zA_Z0-9_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = 'signup/'
+const REGISTER_URL = 'api/v1/user_app/signup/'
 const Register = () => {
     const userRef = useRef();
     const errRef = useRef();
@@ -73,17 +73,20 @@ const Register = () => {
         }
         try {
             const response = await api.post(REGISTER_URL,
-                JSON.stringify({user, pwd}),                        
+                JSON.stringify({email: user, password: pwd}),                        
                 // above make sure this is what the backend is looking for ***
                 {
-                    headers: { 'Content-Type' : 'application/json' },
-                    withCredentials: true
+                    headers: { 'Content-Type' : 'application/json'}
+                                
                 }
             );
             console.log(response.data);
             console.log(response.Token);
             console.log(JSON.stringify(response))
             setSuccess(true);
+            if (response.data.token){
+                localStorage.setItem('authToken', response.data.token);
+            }
             // you can also clear the input fields here if you want
         } catch (err) {
             if (!err?.response) {
@@ -101,7 +104,7 @@ const Register = () => {
 
 
 
-
+        console.log(validName, validPwd, validMatch);
     return(
         <>
         {success ? (
@@ -196,7 +199,7 @@ const Register = () => {
                                         Must match the first password input field
                                      </p>
 
-                                     <button disabled= {!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                                     <button type="submit" disabled= {!validName || !validPwd || !validMatch }>Sign Up</button>
                                 </form>
                                 <p>
                                     Already registered?<br />
@@ -213,89 +216,3 @@ const Register = () => {
             }
 
 export default Register;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const Register = (props) => {
-//     const [email, setEmail] = useState('');
-//     const [pass, setPass] = useState('');
-//     const [name, setName] = useState('');
-//     // const [birthdate, setBirthdate] = useState('')
-    
-//      const handleSubmit = (e) => {
-//         e.preventDefault();
-//         console.log(email);
-//      }
-
-//     return (
-//         <div className="auth-form-container">
-//             <h2>Register</h2>
-//             <form className="register-form" onSubmit={handleSubmit}>
-//                 <label htmlFor="name">Full Name</label>
-//                 <input value={name} onChange={(e) => setName(e.target.value)} type="name" placeholder="full name" id="name" name="name" />
-//                 {/* <input value={name} name="name" id="name" placeholder="Full Name" /> */}
-//                 {/* <label htmlFor="birthdate">Birthdate</label> */}
-//                 {/* <input value={birthdate} name="birthdate" id="birthdate" placeholder="Birthdate" /> */}
-//                 <label htmlFor="email">email</label>
-//                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@hotmail.com" id="email" name="email" />
-//                 <label htmlFor="password">password</label>
-//                 <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-//                 <button className="Link-btn" type="submit">Log In</button>
-//             </form>
-//             <button onClick={() => props.onFormSwitch('login')}>Already have an account? Login here!</button>
-//         </div>
-//     )
-// }

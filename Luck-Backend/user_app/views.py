@@ -119,7 +119,7 @@ class Log_out(APIView):
         password = request.data.get("password")
         user = authenticate(username=email, password=password)
         request.user.auth_token.delete()
-        return Response(status=HTTP_204_NO_CONTENT)
+        return Response("Signed out successfully", status=HTTP_204_NO_CONTENT)
 
 
 

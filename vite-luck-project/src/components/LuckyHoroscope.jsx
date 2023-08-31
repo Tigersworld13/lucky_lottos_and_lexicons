@@ -1,4 +1,3 @@
-// components/LuckyHoroscope.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchHoroscope, fetchMotivationalQuote } from '../api'; // You need to implement the API functions

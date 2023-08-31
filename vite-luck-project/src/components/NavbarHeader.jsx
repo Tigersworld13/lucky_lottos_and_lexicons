@@ -22,23 +22,16 @@ function NavbarHeader({ setCurrentRoute }) {
 
 
           <Nav className="me-auto">
+              <Nav.Link as={Link} to="/">Home</Nav.Link> {/* Link to the WelcomePage */}
+              <Nav.Link as={Link} to="/login">Login</Nav.Link> {/* Link to the Login page */}
+              <Nav.Link as={Link} to="/register">Register</Nav.Link> {/* Link to the Register page */}
+              <Nav.Link as={Link} to="/LuckyHoroscope">Luck n Lexicons</Nav.Link> {/* Link to the Register page */}
             <button className="navbar-button" onClick={() => setCurrentRoute('Login')}>
             Home
             </button>
             <button className="navbar-button" onClick={() => setCurrentRoute('link')}>
                 Link
-              </button>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+              </button>  
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -46,5 +39,7 @@ function NavbarHeader({ setCurrentRoute }) {
 </div>
   )
 }
+
+
 
 export default NavbarHeader;
